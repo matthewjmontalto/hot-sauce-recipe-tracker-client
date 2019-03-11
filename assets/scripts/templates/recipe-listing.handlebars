@@ -1,0 +1,28 @@
+{{#each recipes as |recipe|}}
+
+{{log recipe}}
+
+<section class="recipe" data-id="{{recipe.id}}">
+    <h2>
+      <strong>Name:</strong> {{recipe.name}}
+    </h2>
+    <p>
+      <strong>Date:</strong> {{recipe.date}}
+    </p>
+    <p>
+      <strong>Rating:</strong> {{recipe.rating}}
+    </p>
+    <p>
+      <strong>Fermented</strong>: {{recipe.fermented}}
+    </p>
+    <p>
+      <strong>Ingredients</strong>: {{recipe.ingredients}}
+    </p>
+    <p>
+      <strong>Notes</strong>: {{recipe.notes}}
+    </p>
+    <button type="submit" class="btn btn-primary update-recipe" data-id="{{recipe.id}}">Update</button>
+    <button type="submit" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Remove</button>
+  </section>
+
+{{/each}}

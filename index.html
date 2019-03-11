@@ -85,19 +85,25 @@
       <main>
         <section>
           <div class="container">
-            <form class="form-group" id="create-recipe-form">
-              <h5>Create Recipe</h5>
-              <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name">
-              <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date">
-              <input class="form-control my-1" type="number" name="recipe[rating]" placeholder="rating">
-              <label for="fermented">Fermented?</label>
-              <input class="form-control my-1" type="checkbox" value="true" name="recipe[fermented]" id="fermented">
-              <label for="ingredients">Recipe</label>
-              <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="10" placeholder="ingredients"></textarea>
-              <label for="notes">Additional Notes</label>
-              <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="10" placeholder="notes"></textarea>
-              <input type="submit">
-            </form>
+            <div class="row">
+              <form class="form-group col-3" id="create-recipe-form">
+                <h5>Create Recipe</h5>
+                <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name">
+                <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date">
+                <input class="form-control my-1" type="number" name="recipe[rating]" placeholder="rating">
+                <label for="fermented">Fermented?</label>
+                <input class="form-control my-1" type="checkbox" value="true" name="recipe[fermented]" id="fermented">
+                <label for="ingredients">Recipe</label>
+                <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="10" placeholder="ingredients"></textarea>
+                <label for="notes">Additional Notes</label>
+                <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="10" placeholder="notes"></textarea>
+                <input type="submit">
+              </form>
+              <div class="col=9">
+                <button id="get-recipes-button">Get Recipes</button>
+                <div id="recipe-display"></div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
