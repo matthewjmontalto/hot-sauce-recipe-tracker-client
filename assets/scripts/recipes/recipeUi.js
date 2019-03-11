@@ -25,10 +25,15 @@ const clearForms = () => {
   $('form').trigger('reset')
 }
 
+const clearRecipes = () => {
+  $('#recipe-display').empty()
+}
+
 module.exports = {
   createRecipeSuccess,
   createRecipeFailure,
   getRecipeSuccess,
   getRecipeFailure,
+  clearRecipes,
   clearForms
 }
