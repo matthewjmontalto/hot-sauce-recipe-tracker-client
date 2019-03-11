@@ -62,7 +62,7 @@ const onChangePassword = (event) => {
   authUi.clearForms()
 }
 
-const addHandlers = () => {
+const addAuthHandlers = () => {
   $('#sign-in-form').on('submit', onSignIn)
   $('#sign-up-form').on('submit', onSignUp)
   $('#change-password-form').on('submit', onChangePassword)
@@ -70,5 +70,5 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addAuthHandlers
 }
