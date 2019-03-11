@@ -11,7 +11,7 @@ const signUp = formData => {
   })
 }
 
-const signIn = (formData) => {
+const signIn = formData => {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
@@ -29,7 +29,7 @@ const signOut = () => {
   })
 }
 
-const changePassword = (formData) => {
+const changePassword = formData => {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',

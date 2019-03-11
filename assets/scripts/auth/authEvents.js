@@ -38,6 +38,16 @@ const onSignUp = (event) => {
     })
 }
 
+const onSignOut = (event) => {
+  event.preventDefault()
+
+  authApi.signOut()
+    .then(authUi.signOutSuccess)
+    // reset form fields
+    .then(authUi.clearForms)
+    .catch(authUi.signOutFailure)
+}
+
 const onChangePassword = (event) => {
   event.preventDefault()
 
@@ -48,16 +58,8 @@ const onChangePassword = (event) => {
     .then(authUi.changePasswordSuccess)
     .catch(authUi.changePasswordFailure)
 
-  // resets form fields
+  // reset form fields
   authUi.clearForms()
-}
-
-const onSignOut = (event) => {
-  event.preventDefault()
-
-  authApi.signOut()
-    .then(authUi.signOutSuccess)
-    .catch(authUi.signOutFailure)
 }
 
 const addHandlers = () => {

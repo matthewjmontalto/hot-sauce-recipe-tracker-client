@@ -22,10 +22,22 @@ const signInFailure = () => {
 
 const signOutSuccess = () => {
   console.log('signed out')
+  // clear local user session data
+  store.user = null
 }
 
 const signOutFailure = () => {
   console.log('failed to sign out')
+}
+
+const changePasswordSuccess = () => {
+  $('#change-status').text('Password updated.')
+  setTimeout(() => $('#change-status').text(''), 5000)
+}
+
+const changePasswordFailure = () => {
+  $('#change-status').text('Unable to update password.')
+  setTimeout(() => $('#change-status').text(''), 5000)
 }
 
 const clearForms = () => {
@@ -39,5 +51,7 @@ module.exports = {
   signInFailure,
   signOutSuccess,
   signOutFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
   clearForms
 }
