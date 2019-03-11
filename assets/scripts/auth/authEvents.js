@@ -13,7 +13,7 @@ const onSignIn = (event) => {
     .catch(authUi.signInFailure)
 
   // resets form fields
-  $('#sign-in-form').trigger('reset')
+  authUi.clearForms()
 }
 
 const onSignUp = (event) => {
@@ -49,7 +49,7 @@ const onChangePassword = (event) => {
     .catch(authUi.changePasswordFailure)
 
   // resets form fields
-  $('#change-password-form').trigger('reset')
+  authUi.clearForms()
 }
 
 const onSignOut = (event) => {
