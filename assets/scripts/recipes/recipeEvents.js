@@ -33,10 +33,22 @@ const onDeleteRecipe = event => {
     .catch(recipeUi.deleteRecipeFailure)
 }
 
+const onUpdateRecipe = event => {
+  event.preventDefault()
+
+  const recipeId = $(event.target).data('id')
+  const formData = getFormFields(event.target)
+
+  recipeApi.updateRecipe(formData, recipeId)
+    .then(() => onGetRecipes(event))
+    .catch(recipeUi.updateRecipeFailure)
+}
+
 const addRecipeHandlers = () => {
   $('#create-recipe-form').on('submit', onCreateRecipe)
   $('#get-recipes-button').on('click', onGetRecipes)
   $('#recipe-display').on('click', '.delete-recipe', onDeleteRecipe)
+  $('#recipe-display').on('submit', '#update-recipe-form', onUpdateRecipe)
 }
 
 module.exports = {

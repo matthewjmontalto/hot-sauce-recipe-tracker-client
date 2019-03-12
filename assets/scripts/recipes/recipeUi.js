@@ -4,7 +4,7 @@ const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
 const createRecipeSuccess = (responseData) => {
-  console.log(responseData)
+  // console.log(responseData)
 }
 
 const createRecipeFailure = () => {
@@ -12,13 +12,21 @@ const createRecipeFailure = () => {
 }
 
 const getRecipeSuccess = (responseData) => {
-  console.log(store.recipes)
+  console.log(responseData)
+  // converts ingredients string into an array for all recipe objects returned
+  responseData.recipes.forEach(recipe => {
+    recipe.ingredients = recipe.ingredients.split('\n')
+  })
   const showRecipesHtml = showRecipesTemplate({ recipes: responseData.recipes })
   $('#recipe-display').html(showRecipesHtml)
 }
 
 const getRecipeFailure = () => {
   console.log('failed to retrieve recipes')
+}
+
+const updateRecipeFailure = () => {
+  console.log('failed to update recipe')
 }
 
 const clearForms = () => {
@@ -34,6 +42,7 @@ module.exports = {
   createRecipeFailure,
   getRecipeSuccess,
   getRecipeFailure,
+  updateRecipeFailure,
   clearRecipes,
   clearForms
 }

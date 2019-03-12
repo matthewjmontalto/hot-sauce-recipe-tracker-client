@@ -32,8 +32,20 @@ const deleteRecipe = recipeId => {
   })
 }
 
+const updateRecipe = (formData, recipeId) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/recipes/' + recipeId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
+
 module.exports = {
   createRecipe,
   getRecipes,
-  deleteRecipe
+  deleteRecipe,
+  updateRecipe
 }
