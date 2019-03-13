@@ -17,7 +17,7 @@ const onCreateRecipe = event => {
 
 const onGetRecipes = event => {
   event.preventDefault()
-
+  recipeUi.addHiddenClass('#create-recipe-view')
   recipeApi.getRecipes()
     .then(recipeUi.getRecipeSuccess)
     .catch(recipeUi.getRecipeFailure)
@@ -44,11 +44,19 @@ const onUpdateRecipe = event => {
     .catch(recipeUi.updateRecipeFailure)
 }
 
+const onNewRecipe = (event) => {
+  event.preventDefault()
+  recipeUi.addHiddenClass('.recipes')
+  recipeUi.removeHiddenClass('#create-recipe-view')
+
+}
+
 const addRecipeHandlers = () => {
   $('#create-recipe-form').on('submit', onCreateRecipe)
-  $('#get-recipes-button').on('click', onGetRecipes)
+  $('#show-recipes-nav').on('click', onGetRecipes)
   $('#recipe-display').on('click', '.delete-recipe', onDeleteRecipe)
   $('#recipe-display').on('submit', '#update-recipe-form', onUpdateRecipe)
+  $('#new-recipe-nav').on('click', onNewRecipe)
 }
 
 module.exports = {

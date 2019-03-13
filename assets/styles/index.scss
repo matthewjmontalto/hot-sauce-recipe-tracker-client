@@ -1,5 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
 
-// .hidden {
-//   display: none;
-// }
+body {
+  background-color: #FF9898;
+  min-height: 100vh;
+}
+
+.recipe-dialogue {
+  align-items: center;
+  background-color: #B53737;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 80vh;
+  min-height: 80vh;
+}
+
+.hidden {
+  display: none;
+}

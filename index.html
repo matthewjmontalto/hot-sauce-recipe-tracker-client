@@ -14,9 +14,15 @@
     <body>
       <header>
         <!-- Navigation Bar -->
-        <div class="conatiner">
+        <div class="conatainer">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <h1 class="navbar-brand">Hot Sauce Recipe Tracker</h1>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link hidden" id="new-recipe-nav" href="#">New Recipe</a>
+                <a class="nav-item nav-link hidden" id="show-recipes-nav"href="#">My Recipes</a>
+              </div>
+            </div>
             <form class="form-inline my-2" id="sign-in-form" action="">
               <input class="form-control my-1 mr-2" name="credentials[email]" placeholder="email" type="email">
               <input class="form-control my-1 mr-2" name="credentials[password]" placeholder="password" type="password">
@@ -84,27 +90,26 @@
       </header>
       <main>
         <section>
-          <div class="container">
-            <div class="row">
-              <form class="form-group col-3" id="create-recipe-form">
-                <h5>Create Recipe</h5>
-                <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name">
-                <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date">
-                <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" placeholder="rating">
-                <label for="fermented">Fermented?</label>
-                <input class="form-control my-1" type="checkbox" value="true" name="recipe[fermented]" id="fermented">
-                <label for="ingredients">Recipe</label>
-                <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="10" placeholder="ingredients"></textarea>
-                <label for="notes">Additional Notes</label>
-                <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="10" placeholder="notes"></textarea>
-                <input type="submit">
-              </form>
-              <div class="col=9">
-                <button id="get-recipes-button">Get Recipes</button>
-                <div id="recipe-display"></div>
+          <div class="container my-5 recipe-dialogue hidden" id="create-recipe-view">
+            <div class="row justify-content-md-center">
+              <div class="col-12">
+                  <form class="form-group col-12" id="create-recipe-form">
+                    <h1>Create Recipe</h1>
+                    <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name">
+                    <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date">
+                    <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" placeholder="rating">
+                    <label for="fermented">Fermented?</label>
+                    <input class="form-control my-1" type="checkbox" value="true" name="recipe[fermented]" id="fermented">
+                    <label for="ingredients">Recipe</label>
+                    <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="5" placeholder="ingredients"></textarea>
+                    <label for="notes">Additional Notes</label>
+                    <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="5" placeholder="notes"></textarea>
+                    <input type="submit">
+                  </form>
               </div>
             </div>
           </div>
+          <div class="recipe-container" id="recipe-display"></div>
         </section>
       </main>
     </body>

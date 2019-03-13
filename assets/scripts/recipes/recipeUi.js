@@ -37,6 +37,14 @@ const clearRecipes = () => {
   $('#recipe-display').empty()
 }
 
+const removeHiddenClass = selector => {
+  $(selector).removeClass('hidden')
+}
+
+const addHiddenClass = selector => {
+  $(selector).addClass('hidden')
+}
+
 module.exports = {
   createRecipeSuccess,
   createRecipeFailure,
@@ -44,5 +52,7 @@ module.exports = {
   getRecipeFailure,
   updateRecipeFailure,
   clearRecipes,
-  clearForms
+  clearForms,
+  removeHiddenClass,
+  addHiddenClass
 }

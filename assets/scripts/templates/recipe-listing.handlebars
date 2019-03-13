@@ -2,7 +2,10 @@
 
 {{log recipe}}
 
-<section class="recipe" data-id="{{recipe.id}}">
+<section class="recipes" data-id="{{recipe.id}}">
+  <div class="container my-5 recipe-dialogue">
+    <div class="row justify-content-md-center">
+      <div class="col-12">
     <h2>
       <strong>Name:</strong> {{recipe.name}}
     </h2>
@@ -18,9 +21,6 @@
     <p>
       <strong>Ingredients</strong>:
     </p>
-    <div class="">
-
-    </div>
     <ol>
       {{#each recipe.ingredients as |ingredient|}}
         <li>{{ingredient}}</li>
@@ -47,6 +47,9 @@
     </form>
     <button type="submit" class="btn btn-primary update-recipe" data-id="{{recipe.id}}">Update</button>
     <button type="submit" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Remove</button>
+  </div>
+</div>
+</div>
   </section>
 
 {{/each}}

@@ -14,6 +14,8 @@ const signUpFailure = () => {
 
 const signInSuccess = (responseData) => {
   store.user = responseData.user
+  $('#sign-up-button, #sign-in-button, #sign-in-form').addClass('hidden')
+  $('#change-password-button, #sign-out-button, #new-recipe-nav, #show-recipes-nav').removeClass('hidden')
 }
 
 const signInFailure = () => {
@@ -21,6 +23,8 @@ const signInFailure = () => {
 }
 
 const signOutSuccess = () => {
+  $('#sign-up-button, #sign-in-button, #sign-in-form').removeClass('hidden')
+  $('#change-password-button, #sign-out-button, #new-recipe-nav, #show-recipes-nav, .recipe-dialogue').addClass('hidden')
   console.log('signed out')
   // clear local user session data
   store.user = null
