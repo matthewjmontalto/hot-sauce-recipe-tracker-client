@@ -19,12 +19,7 @@ const signInSuccess = (responseData) => {
 }
 
 const signInFailure = () => {
-  $('.user-dialogue').removeClass('hidden')
-  $('#authentication-reponse').text('Wrong username or password.')
-  setTimeout(() => {
-    $('.user-dialogue').addClass('hidden')
-    $('#authentication-reponse').text('')
-  }, 3000)
+  authFailure('Wrong username or password')
 }
 
 const signOutSuccess = () => {
@@ -35,12 +30,7 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  $('.user-dialogue').removeClass('hidden')
-  $('#authentication-reponse').text('Failed to sign out')
-  setTimeout(() => {
-    $('.user-dialogue').addClass('hidden')
-    $('#authentication-reponse').text('')
-  }, 3000)
+  authFailure('Failed to sign out')
 }
 
 const changePasswordSuccess = () => {
@@ -51,6 +41,15 @@ const changePasswordSuccess = () => {
 const changePasswordFailure = () => {
   $('#change-status').text('Unable to update password.')
   setTimeout(() => $('#change-status').text(''), 5000)
+}
+
+const authFailure = (info) => {
+  $('.user-dialogue').removeClass('hidden')
+  $('#authentication-reponse').text(`${info}`)
+  setTimeout(() => {
+    $('.user-dialogue').addClass('hidden')
+    $('#authentication-reponse').text('')
+  }, 3000)
 }
 
 const clearForms = () => {
@@ -66,5 +65,6 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
+  authFailure,
   clearForms
 }

@@ -4,11 +4,11 @@ const store = require('../store.js')
 const showRecipesTemplate = require('../templates/recipe-listing.handlebars')
 
 const createRecipeSuccess = (responseData) => {
-  // console.log(responseData)
+  recipeFailure('Recipe Created!')
 }
 
 const createRecipeFailure = () => {
-  console.log('Failed to create recipe')
+  recipeFailure('Failed to create recipe')
 }
 
 const getRecipeSuccess = (responseData) => {
@@ -22,11 +22,20 @@ const getRecipeSuccess = (responseData) => {
 }
 
 const getRecipeFailure = () => {
-  console.log('failed to retrieve recipes')
+  recipeFailure('failed to retrieve recipes')
 }
 
 const updateRecipeFailure = () => {
-  console.log('failed to update recipe')
+  recipeFailure('failed to update recipe')
+}
+
+const recipeFailure = (info) => {
+  $('.user-dialogue').removeClass('hidden')
+  $('#authentication-reponse').text(`${info}`)
+  setTimeout(() => {
+    $('.user-dialogue').addClass('hidden')
+    $('#authentication-reponse').text('')
+  }, 3000)
 }
 
 const clearForms = () => {
@@ -54,5 +63,6 @@ module.exports = {
   clearRecipes,
   clearForms,
   removeHiddenClass,
-  addHiddenClass
+  addHiddenClass,
+  recipeFailure
 }
