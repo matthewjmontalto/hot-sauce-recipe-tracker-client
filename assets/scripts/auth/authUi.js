@@ -19,19 +19,28 @@ const signInSuccess = (responseData) => {
 }
 
 const signInFailure = () => {
-  console.log('sign-in failed')
+  $('.user-dialogue').removeClass('hidden')
+  $('#authentication-reponse').text('Wrong username or password.')
+  setTimeout(() => {
+    $('.user-dialogue').addClass('hidden')
+    $('#authentication-reponse').text('')
+  }, 3000)
 }
 
 const signOutSuccess = () => {
   $('#sign-up-button, #sign-in-button, #sign-in-form').removeClass('hidden')
   $('#change-password-button, #sign-out-button, #new-recipe-nav, #show-recipes-nav, .recipe-dialogue').addClass('hidden')
-  console.log('signed out')
   // clear local user session data
   store.user = null
 }
 
 const signOutFailure = () => {
-  console.log('failed to sign out')
+  $('.user-dialogue').removeClass('hidden')
+  $('#authentication-reponse').text('Failed to sign out')
+  setTimeout(() => {
+    $('.user-dialogue').addClass('hidden')
+    $('#authentication-reponse').text('')
+  }, 3000)
 }
 
 const changePasswordSuccess = () => {

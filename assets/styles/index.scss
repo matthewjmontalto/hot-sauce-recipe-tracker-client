@@ -8,6 +8,7 @@ body {
 .recipe-dialogue {
   align-items: center;
   background-color: #B53737;
+  border: 10px solid #ffe5e5;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -15,6 +16,18 @@ body {
   max-width: 80vh;
   min-height: 80vh;
 }
+
+.user-dialogue {
+  align-items: center;
+  background-color: #B53737;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 80vh;
+  min-height: 5vh;
+}
+
 
 .hidden {
   display: none;
