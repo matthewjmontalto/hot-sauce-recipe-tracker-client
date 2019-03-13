@@ -1,56 +1,54 @@
 {{#each recipes as |recipe|}}
 
-{{log recipe}}
+  <section class="recipes" data-id="{{recipe.id}}">
+    <div class="container my-5 recipe-dialogue">
+      <div class="row justify-content-md-center">
+        <div class="col-12">
+          <h2>
+            <strong>Name:</strong> {{recipe.name}}
+          </h2>
+          <p>
+            <strong>Date:</strong> {{recipe.date}}
+          </p>
+          <p>
+            <strong>Rating:</strong> {{recipe.rating}}
+          </p>
+          <p>
+            <strong>Fermented</strong>: {{recipe.fermented}}
+          </p>
+          <p>
+            <strong>Ingredients</strong>:
+          </p>
+          <ol>
+            {{#each recipe.ingredients as |ingredient|}}
+              <li>{{ingredient}}</li>
+            {{/each}}
+          </ol>
+          <p>
+            <strong>Notes</strong>: {{recipe.notes}}
+          </p>
 
-<section class="recipes" data-id="{{recipe.id}}">
-  <div class="container my-5 recipe-dialogue">
-    <div class="row justify-content-md-center">
-      <div class="col-12">
-    <h2>
-      <strong>Name:</strong> {{recipe.name}}
-    </h2>
-    <p>
-      <strong>Date:</strong> {{recipe.date}}
-    </p>
-    <p>
-      <strong>Rating:</strong> {{recipe.rating}}
-    </p>
-    <p>
-      <strong>Fermented</strong>: {{recipe.fermented}}
-    </p>
-    <p>
-      <strong>Ingredients</strong>:
-    </p>
-    <ol>
-      {{#each recipe.ingredients as |ingredient|}}
-        <li>{{ingredient}}</li>
-      {{/each}}
-    </ol>
-    <p>
-      <strong>Notes</strong>: {{recipe.notes}}
-    </p>
-
-    <form class="form-group col-12 hidden" data-id="{{recipe.id}}" id="update-recipe-form">
-      <h5>Update Recipe</h5>
-      <input class="form-control my-1" type="text" name="recipe[name]" value="{{recipe.name}}">
-      <input class="form-control my-1" type="date" name="recipe[date]" value="{{recipe.date}}">
-      <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" value="{{recipe.rating}}">
-      <label for="ingredients">Recipe</label>
-      <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="10" value="">
-        {{#each recipe.ingredients as |ingredient|}}
-        {{ingredient}}
-        {{/each}}
-      </textarea>
-      <label for="notes">Additional Notes</label>
-      <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="10" value="">{{recipe.notes}}</textarea>
-      <button type="submit" name="update recipe">update</button>
-      <button type="button" name="cancel update" id="cancel-update-button" data-id="{{recipe.id}}">cancel</button>
-    </form>
-    <button type="submit" class="btn btn-primary update-recipe" data-id="{{recipe.id}}">Update</button>
-    <button type="submit" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Remove</button>
-  </div>
-</div>
-</div>
+          <form class="form-group col-12 update-recipe-form hidden" data-id="{{recipe.id}}">
+            <h5>Update Recipe</h5>
+            <input class="form-control my-1" type="text" name="recipe[name]" value="{{recipe.name}}">
+            <input class="form-control my-1" type="date" name="recipe[date]" value="{{recipe.date}}">
+            <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" value="{{recipe.rating}}">
+            <label>Recipe</label>
+              <textarea class="form-control my-1" name="recipe[ingredients]" cols="30" rows="10" value="">
+                {{#each recipe.ingredients as |ingredient|}}
+                {{ingredient}}
+                {{/each}}
+              </textarea>
+            <label>Additional Notes</label>
+              <textarea class="form-control my-1" name="recipe[notes]" cols="30" rows="10" value="">{{recipe.notes}}</textarea>
+            <button type="submit" name="update recipe">update</button>
+            <button type="button" name="cancel update" class="cancel-update-button" data-id="{{recipe.id}}">cancel</button>
+          </form>
+          <button type="submit" class="btn btn-primary update-recipe" data-id="{{recipe.id}}">Update</button>
+          <button type="submit" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Remove</button>
+        </div>
+      </div>
+    </div>
   </section>
 
 {{/each}}

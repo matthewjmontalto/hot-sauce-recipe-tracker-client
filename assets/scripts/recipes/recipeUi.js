@@ -12,11 +12,9 @@ const createRecipeFailure = () => {
 }
 
 const getRecipeSuccess = (responseData) => {
-  console.log(responseData)
   // converts ingredients string into an array for all recipe objects returned
   responseData.recipes.forEach(recipe => {
     recipe.ingredients = recipe.ingredients.split('\n').filter(i => i.replace(/\s/g, '') !== '')
-    console.log('new array:', recipe.ingredients)
   })
   const showRecipesHtml = showRecipesTemplate({ recipes: responseData.recipes })
   $('#recipe-display').html(showRecipesHtml)

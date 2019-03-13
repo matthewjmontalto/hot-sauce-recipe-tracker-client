@@ -76,8 +76,8 @@ const addRecipeHandlers = () => {
   $('#create-recipe-form').on('submit', onCreateRecipe)
   $('#show-recipes-nav').on('click', onGetRecipes)
   $('#recipe-display').on('click', '.delete-recipe', onDeleteRecipe)
-  $('#recipe-display').on('submit', '#update-recipe-form', onUpdateRecipe)
-  $('#recipe-display').on('click', '#cancel-update-button', onUpdateCancel)
+  $('#recipe-display').on('submit', '.update-recipe-form', onUpdateRecipe)
+  $('#recipe-display').on('click', '.cancel-update-button', onUpdateCancel)
   $('#recipe-display').on('click', '.update-recipe', onUpdateButton)
   $('#new-recipe-nav').on('click', onNewRecipeView)
 }
