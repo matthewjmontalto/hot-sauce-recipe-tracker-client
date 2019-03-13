@@ -44,6 +44,7 @@
       <label for="notes">Additional Notes</label>
       <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="10" value="">{{recipe.notes}}</textarea>
       <button type="submit" name="update recipe">update</button>
+      <button type="button" name="cancel update" id="cancel-update-button" data-id="{{recipe.id}}">cancel</button>
     </form>
     <button type="submit" class="btn btn-primary update-recipe" data-id="{{recipe.id}}">Update</button>
     <button type="submit" class="btn btn-danger delete-recipe" data-id="{{recipe.id}}">Remove</button>

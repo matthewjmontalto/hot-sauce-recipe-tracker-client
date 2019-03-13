@@ -44,11 +44,31 @@ const onUpdateRecipe = event => {
     .catch(recipeUi.updateRecipeFailure)
 }
 
-const onNewRecipe = (event) => {
+const onNewRecipe = event => {
   event.preventDefault()
   recipeUi.addHiddenClass('.recipes')
   recipeUi.removeHiddenClass('#create-recipe-view')
+}
 
+const onUpdateButton = event => {
+  event.preventDefault()
+
+  const currentRecipe = $(event.target).data('id')
+
+  recipeUi.removeHiddenClass(`form[data-id="${currentRecipe}"]`)
+  recipeUi.addHiddenClass('.update-recipe')
+  recipeUi.addHiddenClass('.delete-recipe')
+}
+
+const onUpdateCancel = event => {
+  event.preventDefault()
+
+  const currentRecipe = $(event.target).data('id')
+
+  recipeUi.clearForms()
+  recipeUi.addHiddenClass(`form[data-id="${currentRecipe}"]`)
+  recipeUi.removeHiddenClass('.update-recipe')
+  recipeUi.removeHiddenClass('.delete-recipe')
 }
 
 const addRecipeHandlers = () => {
@@ -56,6 +76,8 @@ const addRecipeHandlers = () => {
   $('#show-recipes-nav').on('click', onGetRecipes)
   $('#recipe-display').on('click', '.delete-recipe', onDeleteRecipe)
   $('#recipe-display').on('submit', '#update-recipe-form', onUpdateRecipe)
+  $('#recipe-display').on('click', '#cancel-update-button', onUpdateCancel)
+  $('#recipe-display').on('click', '.update-recipe', onUpdateButton)
   $('#new-recipe-nav').on('click', onNewRecipe)
 }
 
