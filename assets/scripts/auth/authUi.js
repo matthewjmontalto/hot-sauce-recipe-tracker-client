@@ -27,7 +27,7 @@ const signInFailure = () => {
 
 const signOutSuccess = () => {
   $('#sign-up-button, #sign-in-button, #sign-in-form, .main-pepper-logo').removeClass('hidden')
-  $('#change-password-button, #sign-out-button, #new-recipe-nav, #show-recipes-nav, .recipe-dialogue').addClass('hidden')
+  $('#change-password-button, #sign-out-button, #new-recipe-nav, #show-recipes-nav, .recipe-dialogue, .no-recipes').addClass('hidden')
   // clear local user session data
   store.user = null
 }
