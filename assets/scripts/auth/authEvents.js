@@ -67,6 +67,7 @@ const addAuthHandlers = () => {
   $('#sign-up-form').on('submit', onSignUp)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out-button').on('click', onSignOut)
+  $('#change-password-button').on('click', authUi.clearForms)
 }
 
 module.exports = {
