@@ -109,13 +109,13 @@
               <div class="col-12">
                   <form class="form-group col-12" id="create-recipe-form">
                     <h1>Create Recipe</h1>
-                    <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name">
-                    <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date">
+                    <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name" required>
+                    <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date" required>
                     <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" placeholder="rating">
                     <label for="fermented">Fermented?</label>
                     <input class="form-control my-1" type="checkbox" value="true" name="recipe[fermented]" id="fermented">
                     <label for="ingredients">Recipe</label>
-                    <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="5" placeholder="ingredients"></textarea>
+                    <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="5" placeholder="ingredients" required></textarea>
                     <label for="notes">Additional Notes</label>
                     <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="5" placeholder="notes"></textarea>
                     <input type="submit">

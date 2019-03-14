@@ -30,8 +30,8 @@
 
           <form class="form-group col-12 update-recipe-form hidden" data-id="{{recipe.id}}">
             <h5>Update Recipe</h5>
-            <input class="form-control my-1" type="text" name="recipe[name]" value="{{recipe.name}}">
-            <input class="form-control my-1" type="date" name="recipe[date]" value="{{recipe.date}}">
+            <input class="form-control my-1" type="text" name="recipe[name]" value="{{recipe.name}}" required>
+            <input class="form-control my-1" type="date" name="recipe[date]" value="{{recipe.date}}" required>
             <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" value="{{recipe.rating}}">
             <div class="radio-boolean">
                 <p>fermented</p>
@@ -40,7 +40,7 @@
                 <input class="form-control my-1" type="radio" value="false" name="recipe[fermented]">
             </div>
             <label>Recipe</label>
-              <textarea class="form-control my-1" name="recipe[ingredients]" cols="30" rows="10" value="">
+              <textarea class="form-control my-1" name="recipe[ingredients]" cols="30" rows="10" required>
                 {{#each recipe.ingredients as |ingredient|}}
                 {{ingredient}}
                 {{/each}}
