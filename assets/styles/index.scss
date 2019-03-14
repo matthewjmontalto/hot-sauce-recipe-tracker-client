@@ -1,13 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  background-color: #FF9898;
+  background-color: #fff7b2;
   min-height: 100vh;
+}
+
+img {
+  margin: 0 auto;
+}
+
+.main-pepper-logo {
+  align-items: center;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  margin: 0;
+  max-width: 100%;
 }
 
 .recipe-dialogue {
   align-items: center;
-  background-color: #B53737;
+  background-color: #FF9898;
   border: 10px solid #ffe5e5;
   border-radius: 10px;
   display: flex;
@@ -15,6 +28,12 @@ body {
   margin: 0 auto;
   max-width: 80vh;
   min-height: 80vh;
+}
+
+.radio-boolean {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
 }
 
 .user-dialogue {
@@ -28,11 +47,6 @@ body {
   min-height: 5vh;
 }
 
-.radio-boolean {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0;
-}
 
 .hidden {
   display: none;

@@ -18,6 +18,7 @@ const onCreateRecipe = event => {
 const onGetRecipes = event => {
   event.preventDefault()
   recipeUi.addHiddenClass('#create-recipe-view')
+  recipeUi.addHiddenClass('.main-pepper-logo')
   recipeApi.getRecipes()
     .then(recipeUi.getRecipeSuccess)
     .catch(recipeUi.getRecipeFailure)
@@ -49,6 +50,7 @@ const onNewRecipeView = event => {
   event.preventDefault()
   recipeUi.addHiddenClass('.recipes')
   recipeUi.removeHiddenClass('#create-recipe-view')
+  recipeUi.addHiddenClass('.main-pepper-logo')
 }
 
 const onUpdateButton = event => {
