@@ -28,6 +28,11 @@ body {
   min-height: 5vh;
 }
 
+.radio-boolean {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+}
 
 .hidden {
   display: none;

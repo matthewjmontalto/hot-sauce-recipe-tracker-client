@@ -4,7 +4,10 @@ const store = require('../store.js')
 
 const signUpSuccess = () => {
   $('#account-status').text('Welcome!')
-  setTimeout(() => $('#account-status').text(''), 5000)
+  setTimeout(() => {
+    $('#signUpModal').modal('hide')
+    $('#account-status').text('')
+  }, 1000)
 }
 
 const signUpFailure = () => {
@@ -35,7 +38,10 @@ const signOutFailure = () => {
 
 const changePasswordSuccess = () => {
   $('#change-status').text('Password updated.')
-  setTimeout(() => $('#change-status').text(''), 5000)
+  setTimeout(() => {
+    $('#changePasswordModal').modal('hide')
+    $('#change-status').text('')
+  }, 1000)
 }
 
 const changePasswordFailure = () => {

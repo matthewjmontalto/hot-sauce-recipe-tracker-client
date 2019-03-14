@@ -33,6 +33,12 @@
             <input class="form-control my-1" type="text" name="recipe[name]" value="{{recipe.name}}">
             <input class="form-control my-1" type="date" name="recipe[date]" value="{{recipe.date}}">
             <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" value="{{recipe.rating}}">
+            <div class="radio-boolean">
+                <p>fermented</p>
+                <input class="form-control my-1" type="radio" value="true" name="recipe[fermented]">
+                <p>not fermented</p>
+                <input class="form-control my-1" type="radio" value="false" name="recipe[fermented]">
+            </div>
             <label>Recipe</label>
               <textarea class="form-control my-1" name="recipe[ingredients]" cols="30" rows="10" value="">
                 {{#each recipe.ingredients as |ingredient|}}
