@@ -51,6 +51,7 @@ const onNewRecipeView = event => {
   recipeUi.addHiddenClass('.recipes')
   recipeUi.removeHiddenClass('#create-recipe-view')
   recipeUi.addHiddenClass('.main-pepper-logo')
+  recipeUi.addHiddenClass('.no-recipes')
 }
 
 const onUpdateButton = event => {
