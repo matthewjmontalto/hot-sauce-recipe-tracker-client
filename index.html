@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Hot Sauce Recipe Tracker</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="public/hot_pepper.ico">
+      <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <!-- Navigation Bar -->
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <h1 class="navbar-brand">Hot Sauce Recipe Tracker</h1>
+            <div class="navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link hidden" id="new-recipe-nav" href="#">New Recipe</a>
+                <a class="nav-item nav-link hidden" id="show-recipes-nav"href="#">My Recipes</a>
+              </div>
+            </div>
+            <form class="form-inline my-2" id="sign-in-form" action="">
+              <input class="form-control my-1 mr-2" name="credentials[email]" placeholder="email" type="email">
+              <input class="form-control my-1 mr-2" name="credentials[password]" placeholder="password" type="password">
+              <button class="btn btn-primary mr-2" id="sign-in-button" type="submit">Sign In</button>
+            </form>
+            <button type="button" class="btn btn-primary mr-2" id="sign-up-button" data-toggle="modal" data-target="#signUpModal">
+              Sign Up
+            </button>
+            <button type="button" class="btn btn-primary mr-2 hidden" id="change-password-button" data-toggle="modal" data-target="#changePasswordModal">
+              Change Password
+            </button>
+            <button id="sign-out-button" class="btn btn-secondary mr 2 hidden">Sign Out</button>
+          </nav>
+          <!-- Sign Up Modal -->
+          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+
+                </div>
+                <div class="modal-body">
+                  <form id="sign-up-form" action="">
+                    <h5>Do not supply information used by other services.</h5>
+                    <input class="form-control my-1" name="credentials[email]" type="email" placeholder="email">
+                    <input class="form-control my-1" name="credentials[password]" type="password" placeholder="password">
+                    <input class="form-control my-1" name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <div id="account-status"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Change Password Modal -->
+          <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="change-password-form" action="">
+                    <h5>Do not supply information used by other services.</h5>
+                    <input class="form-control my-1" name="passwords[old]" type="password" placeholder="Old Password">
+                    <input class="form-control my-1" name="passwords[new]" type="password" placeholder="New Password">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <div id="change-status"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </header>
+      <main>
+        <section>
+          <div class="container my-5 user-dialogue hidden">
+            <div class="row justify-content-md-center">
+              <div id="authentication-reponse"></div>
+            </div>
+          </div>
+          <div class="container my-5 no-recipes hidden">
+            <div>
+              <h1>It's Time To Make Some Hot Sauce!</h1>
+              <p>Don't forget to wash your hands before you pee.</p>
+            </div>
+          </div>
+          <div class="main-pepper-logo my-5">
+            <img src="public/hot_pepper.png" alt="hot pepper logo">
+          </div>
+          <div class="container my-5 recipe-dialogue hidden" id="create-recipe-view">
+            <div class="row justify-content-md-center">
+              <div class="col-12">
+                  <form class="form-group col-12" id="create-recipe-form">
+                    <h1>Create Recipe</h1>
+                    <input class="form-control my-1" type="text" name="recipe[name]" placeholder="recipe name" required>
+                    <input class="form-control my-1" type="date" name="recipe[date]" placeholder="date" required>
+                    <input class="form-control my-1" type="number" min="0" max="5" name="recipe[rating]" placeholder="spicey rating">
+                    <label for="fermented">Fermented?</label>
+                    <input class="form-control my-1" type="checkbox" value="true" name="recipe[fermented]" id="fermented">
+                    <label for="ingredients">Recipe</label>
+                    <textarea class="form-control my-1" name="recipe[ingredients]" id="ingredients" cols="30" rows="5" placeholder="ingredients" required></textarea>
+                    <label for="notes">Additional Notes</label>
+                    <textarea class="form-control my-1" name="recipe[notes]" id="notes" cols="30" rows="5" placeholder="notes"></textarea>
+                    <button type="submit" class="btn btn-outline-dark">Save Recipe</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <div class="recipe-container" id="recipe-display"></div>
+        </section>
+      </main>
+    </body>
+</html>
