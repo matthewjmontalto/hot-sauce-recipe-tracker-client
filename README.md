@@ -1,6 +1,8 @@
 # Hot Sauce Recipe Tracker
 
-[Hot Sauce Recipe Tracker API](https://github.com/matthewjmontalto/hot-sauce-recipe-tracker-api)
+[Hot Sauce Recipe Tracker API Repo](https://github.com/matthewjmontalto/hot-sauce-recipe-tracker-api)
+[Deployed Client](https://matthewjmontalto.github.io/hot-sauce-recipe-tracker-client/)
+[Deployed Heroku Application](https://hot-sauce-recipe-tracker.herokuapp.com/)
 
 ## Thank You!
 
@@ -22,11 +24,13 @@ risk of affecting another user's recipes.
 - HTML5 & SCSS
 - Bootsrap
 - javaScript
+- jQuery
 - Handlbars.js
 - Ajax
 
 ### API
 - Ruby on rails
+- Postgresql
 
 ### User Stories
 - As a user, I would like to have an account
@@ -51,3 +55,15 @@ risk of affecting another user's recipes.
 
 ## Wireframes
 [wireframes](https://imgur.com/a/rX6fwnV)
+
+## Development Process
+The approach I adopted to developing my full-stack application began with
+the back-end API. By building the back-end database, I had a better foundation
+upon which I could develop the client. Authorization was initial set to open
+read controller for testing purposes and switched to protected controller for
+MVP.
+
+The client side came after the API was solid. I began by testing routes with
+curl scripts, then with simple layout html forms. Once everything was behaving
+as expected, I moved on to building a more robust layout. Styling was left to
+the very end of the process.
