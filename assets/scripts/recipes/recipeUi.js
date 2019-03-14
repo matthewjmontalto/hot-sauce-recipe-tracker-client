@@ -12,10 +12,12 @@ const createRecipeFailure = () => {
 }
 
 const getRecipeSuccess = (responseData) => {
+  // checks whether returned data is empty
   if (responseData.recipes.length === 0) {
-    recipeFailure('You need to create some recipes!')
+    removeHiddenClass('.no-recipes')
   } else {
-  // converts ingredients string into an array for all recipe objects returned
+    addHiddenClass('.no-recipes')
+    // converts ingredients string into an array for all recipe objects returned
     responseData.recipes.forEach(recipe => {
       recipe.ingredients = recipe.ingredients.split('\n').filter(i => i.replace(/\s/g, '') !== '')
     })
